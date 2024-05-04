@@ -1,0 +1,86 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  background-color: #f7f8f9;
+}
+
+
+.title {
+  padding: 60px 0 10px 20px;
+  border-bottom: 1px solid #e0dede;
+  font-size: 20px;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+
+.avatars-container {
+  max-width: 350px;
+  position: absolute;   
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); 
+}
+
+ 
+.avatars-container::after {
+  display: block;
+  content: '';
+  clear: both;
+}
+
+
+.avatar {
+  width: 64px;
+  height: 64px;
+  margin: 10px;
+  border-radius: 50%;
+  float: left;
+  position: relative;
+}
+
+
+.avatar img {
+  width: 100%;
+  border-radius: 50%;
+}
+
+
+.status {
+  width: 18px;
+  height: 18px;
+  border: 1px solid white;
+  border-radius: 50%;
+  position: absolute;
+  top: 45px;
+  left: 50px;
+}
+
+
+.offline {
+  background-color: #DBDBDB;
+}
+
+
+.online {
+  background-color: #4CFE88;
+} 
+
+
+
+/* flex를 지원하는 웹브라우저를 위한 스타일 */
+/* @supports (display:flex) {
+  .avatars-container {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+  }
+
+  .avatar:nth-child(-n + 4) { order: normal; }
+  .avatar:nth-child(n + 5) { order: -1; }
+}
+ */
+
+
+
+
