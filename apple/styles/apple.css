@@ -1,0 +1,205 @@
+@import url(./reset.css);
+@import url(./theme.css);
+@import url(./base.css);
+
+
+/* 헤더 내비게이션 */
+header {
+  background-color: var(--gray-300);
+}
+
+.apple-navigation {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 var(--small-spacing);
+  color: var(--gray-100);
+  font-size: var(--xx-small-text);
+}
+
+.apple-navigation svg {
+  vertical-align: middle;
+}
+
+.apple-navigation li:hover {
+  color: var(--white);
+}
+
+.apple-navigation li:nth-child(12) {
+  position: relative;
+  right: var(--base-spacing);
+}
+
+.apple-navigation li:hover svg path {
+  fill: var(--white); 
+}
+
+.apple-navigation li:nth-child(n+2):nth-child(-n+11) {
+  visibility: hidden;
+}
+
+/* 카드 레이아웃 */
+.apple-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-auto-rows: auto;
+  gap: var(--base-spacing);
+}
+
+/* 카드 컴포넌트 공통 스타일 */
+.product {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  height: var(--size);
+  padding-top: var(--large-spacing);
+  text-align: center;
+  color: var(--black);
+  background-color: transparent;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+}
+  
+.product-name,
+.short-promotion,
+.release-info {
+  font-weight: bold;
+  margin-bottom: var(--small-spacing);
+}
+
+.product-name {
+  font-size: var(--large-text);
+}
+
+.short-promotion {
+  font-size: var(--base-text);
+}
+
+.product-link {
+  display: flex;
+  flex-flow: row nowrap;
+  justify-content: center;
+  gap: var(--base-spacing);
+  font-size: var(--xx-small-text);
+}
+
+.button {
+  padding: var(--x-small-spacing) var(--small-spacing);
+  border: 1px solid var(--blue-300);
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all .2s ease-in-out;
+}
+
+.button.more-btn {
+  color: var(--white);
+  background-color: var(--blue-300);
+}
+
+.button.price-btn {
+  color: var(--blue-100);
+}
+
+.button:hover {
+  color: var(--white);
+  border-color: var(--blue-200);
+  background-color: var(--blue-200);
+}
+
+/* 개별 배경 이미지 */
+.ipad-pro {
+  background-image: image-set(url(../products/ipad_pro.jpeg) 1x, url(../products/ipad_pro_2x.jpeg) 2x);
+}
+
+.ipad-air {
+  background-image: image-set(url(../products/ipad_air.jpeg) 1x, url(../products/ipad_air_2x.jpeg) 2x);
+}
+
+.iphone15-pro {
+  background-image: image-set(url(../products/iphone15_pro.jpeg) 1x, url(../products/iphone15_pro_2x.jpeg) 2x);
+}
+
+.iphone15 {
+  background-image: image-set(url(../products/iphone15.jpeg) 1x, url(../products/iphone15_2x.jpeg) 2x);
+}
+
+.apple-watch {
+  background-image: image-set(url(../products/apple_watch.jpeg) 1x, url(../products/apple_watch_2x.jpeg) 2x);
+}
+
+.macbook-air {
+  background-image: image-set(url(../products/macbook_air.jpeg) 1x, url(../products/macbook_air_2x.jpeg) 2x);
+}
+
+.airpods-pro {
+  background-image: image-set(url(../products/airpods_pro.jpeg) 1x, url(../products/airpods_pro_2x.jpeg) 2x);;
+}
+
+/* 개별 출시 정보 스타일 */
+.release-info {
+  color: var(--gray-100);
+}
+
+/* 상품 이름, 홍보 문구 개별 스타일 */
+.white h2,
+.white div {
+  color: var(--white);
+}
+
+/* 버튼 개별 스타일 */
+.black .button {
+  border: 1px solid var(--black);
+}
+
+.black .button.more-btn {
+    background-color: var(--black);
+}
+
+.black .button.price-btn {
+  color: var(--black);
+}
+
+.black .button:hover {
+    background-color: var(--gray-200);
+    border: 1px solid var(--gray-200);
+    color: var(--white);
+  }
+
+
+/* 1024px 이상 large screen */
+@media (min-width: 1024px) {
+  .apple-navigation {
+    width: 75%;
+    margin: 0 auto;
+  }
+  
+  .apple-navigation li:nth-child(12) {
+    position: relative;
+    left: 0;
+  }
+  
+  .apple-navigation li:nth-child(n+2):nth-child(-n+11) {
+    visibility: visible;
+  }
+
+  
+  .apple-container {
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: repeat(5, auto);
+  }
+  
+  .iphone15-pro {
+    background-image: image-set(url(../products/iphone15_pro_wide.jpeg) 1x, url(../products/iphone15_pro_wide_2x.jpeg) 2x);
+  }
+  
+  .product:first-child,
+  .product:nth-child(2),
+  .product:nth-child(3) {
+    grid-column: span 2;
+  }
+
+  .short-promotion p {
+    display: inline;
+  }
+}
