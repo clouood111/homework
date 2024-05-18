@@ -1,5 +1,7 @@
 # 20240518 과제 - 애플 페이지 구현
 
+![결과](https://github.com/clouood111/homework/assets/144698072/4d23461a-07fe-41a8-a985-697b4c732769)
+
 ## 1. 과제 요구사항
 
 
